@@ -1,0 +1,30 @@
+
+@import "~noty/src/noty.scss";
+@import "~noty/src/themes/mint.scss";
+
+ .content-wrapper {
+    padding-left: 0px !important;
+    /* padding-right: 15%; */
+}
+
+/*
+.home-tab {
+    margin-top: 10px;
+} */
+
+.sidebar .nav:not(.sub-menu) {
+    margin-top: 30px !important;
+}
+
+textarea {
+    height: 100% !important;
+}
+
+textarea::placeholder,input::placeholder{
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+td {
+    text-transform: capitalize;
+}

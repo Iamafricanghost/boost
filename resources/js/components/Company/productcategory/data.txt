@@ -1,0 +1,84 @@
+<div class="col-md-3 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Product categories</h4>
+      <div class="media">
+        <i class="ti-bag icon-sm text-success d-flex align-self-start me-3"></i>
+        <div class="media-body">
+          <p class="card-text"><strong>Step 1:</strong> Setup product categories</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <router-link to="/product-categories" class="btn btn-sm btn-success form-control">View</router-link>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Product subcategories</h4>
+      <div class="media">
+        <i class="ti-server icon-sm text-danger d-flex align-self-start me-3"></i>
+        <div class="media-body">
+          <p class="card-text"><strong>Step 2:</strong> Setup product subcategories</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <router-link to="product-subcategories" class="btn btn-sm btn-danger form-control">View</router-link>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Product Brands</h4>
+      <div class="media">
+        <i class="ti-printer icon-sm text-warning d-flex align-self-start me-3"></i>
+        <div class="media-body">
+          <p class="card-text"><strong>Step 3:</strong> Setup product brands </p>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <router-link to="product-brands" class="btn btn-sm btn-warning form-control">View</router-link>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Product Variants</h4>
+      <div class="media">
+        <i class="ti-harddrive icon-sm text-info d-flex align-self-start me-3"></i>
+        <div class="media-body">
+          <p class="card-text"><strong>Step 4:</strong> Setup product variants</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <router-link to="product-variants" class="btn btn-sm btn-info form-control">View</router-link>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-3 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Product skus</h4>
+      <div class="media">
+        <i class="ti-harddrives icon-sm text-primary d-flex align-self-start me-3"></i>
+        <div class="media-body">
+          <p class="card-text"><strong>Step 5:</strong> Setup product skus</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <router-link to="product-skus" class="btn btn-sm btn-primary form-control">View</router-link>
+    </div>
+  </div>
+</div>

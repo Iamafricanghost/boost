@@ -1,0 +1,103 @@
+<template>
+    <div class="content-wrapper">
+<div class="row">
+    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><router-link to="/">Home</router-link></li>
+                            <li class="breadcrumb-item"><router-link to="/levels-home">Back</router-link></li>
+                        </ol>
+                </nav>
+</div>
+        <div class="row g-3">
+            <div class="col-md-8 grid-margin stretch-card mx-auto">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Add a level</h4>
+                  <p class="card-description">
+                    Basic information
+                  </p>
+                  <form class="forms-sample row g-3" @submit.prevent="createLevel" enctype="multipart/form-data">
+                      <div class="col-md-4">
+                          <select class="form-select form-control" aria-label="Default select example" v-model="form.level_category">
+                            <option selected >Level category - 1 is highest</option>
+                            <option value="Level 1">1</option>
+                            <option value="Level 2">2</option>
+                            <option value="Level 3">3</option>
+                            <option value="Level 4">4</option>
+                            <option value="Level 5">5</option>
+                          </select>
+                            <small class="text-danger" v-if="errors.level_category">{{ errors.level_category[0] }}</small>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="level_name" placeholder="Level name" v-model="form.level_name">
+                            <small class="text-danger" v-if="errors.level_name">{{ errors.level_name[0] }}</small>
+                        </div>
+
+                        <div class="col-md-4">
+                          <select class="form-select form-control" aria-label="Default select example" v-model="form.country_id">
+                            <option selected>Select country</option>
+                            <option :value="country.id" v-for="country in countries">{{country.country_name}}</option>
+                          </select>
+                            <small class="text-danger" v-if="errors.country_id">{{ errors.country_id[0] }}</small>
+                        </div>
+                    <button type="submit" class="btn btn-primary me-2">Create level</button>
+
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</template>
+
+<script type="text/javascript">
+
+  export default{
+    created(){
+        if(!User.loggedIn()){
+          this.$router.push({name:'/'})
+        }
+    },
+    data(){
+      return {
+        form: {
+          level_name:'',
+          level_category:'',
+          country_id:'',
+        },
+        errors:{},
+        countries:{}
+      }
+    },
+    methods:{
+
+      //Method for inserting merchandiser details to the database
+      createLevel(){
+            axios.post('/api/levels/',this.form)
+            .then(()=> {
+              this.$router.push({name: 'levels'})
+              Notification.success()
+            })
+            .catch(error => this.errors = error.response.data.errors)
+        }
+      
+    },
+    created(){
+    axios.get('/api/country/')
+    .then(({data}) => (this.countries = data))
+
+  } 
+
+  }
+</script>
+
+<style type="text/css">
+select.form-control{
+  color: black;
+}
+
+.content-wrapper {
+    margin-top: 34px;
+}
+
+</style>
